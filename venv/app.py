@@ -1,20 +1,15 @@
 import time 
 import os
+import json
+from flask import Flask, jsonify, Response, request
 
-dic_usuarios = {'Usuario001': {'Nombre y Apellido':'Nicolas Vaylet', 'Contraseña':111111},
-                'Usuario002': {'Nombre y Apellido':'Joaquin Allende', 'Contraseña':111112},
-                'Usuario003': {'Nombre y Apellido':'Javier Balmaceda', 'Contraseña':111113},
-                'Usuario004': {'Nombre y Apellido':'Martin Troilo', 'Contraseña':111114},
-                'Usuario005': {'Nombre y Apellido':'Marco Urtarroz', 'Contraseña':111115},
-                'Usuario006': {'Nombre y Apellido':'Carlos Berger', 'Contraseña':111116},
-                'Usuario007': {'Nombre y Apellido':'Mauro Torre', 'Contraseña':111117},
-                'Usuario008': {'Nombre y Apellido':'Camila Iniguez', 'Contraseña':111118},
-                'Usuario009': {'Nombre y Apellido':'Constanza Gonzalez', 'Contraseña':111119},
-                'Usuario010': {'Nombre y Apellido':'Micaela Perez', 'Contraseña':211111},
-                'Usuario011': {'Nombre y Apellido':'Simona Garcia', 'Contraseña':211112},
-                'Usuario012': {'Nombre y Apellido':'Genaro Fernandez', 'Contraseña':211113},
-                'Usuario013': {'Nombre y Apellido':'Cristina Aguilera', 'Contraseña':211114},
-                'Usuario014': {'Nombre y Apellido':'Alberto Comodoro', 'Contraseña':211115}}
+
+
+app = Flask(__name__)
+
+with open("dic_usuarios.json") as file:
+    usuarios = json.load(file) 
+
 
 
 #################### MENU INICIO SESION #####################################    
@@ -39,6 +34,20 @@ def menu_usuarios():
         time.sleep(1)
         os.system('cls')
         menu_usuarios()
+        
+def iniciar_sesion(dic_usuarios):
+    usuario_1=input("ingrese usuario: ")
+    contrasenia_1=input(int("ingrese contrasenia: "))
+    for usuario_1 in dic_usuarios:
+        if usuario_1 in dic_usuarios["nombre y apellido"]:  
+            return menu_principal 
+        else:
+            return "usuario o contrasenia incorrecta"
+
+            
+
+                
+    
                 
 #################### MENU PRINCIPAL #####################################    
 def imprimir_menu():
@@ -59,7 +68,7 @@ def imprimir_menu():
 ########### MAIN #####################################################
 in_menu = imprimir_menu()
 # Solo puede salir del menu con un 1 o 2. No hay posibilidad de que tome otro valor
-if in_menu == 1:
+"""if in_menu == 1:
     iniciar_sesion()
 else:
-    modo_libre() 
+    modo_libre() """

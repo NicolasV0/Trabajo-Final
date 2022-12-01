@@ -1,0 +1,44 @@
+{
+    "peliculas":[
+        {
+            "titulo":"spider man-lejos de casa",
+            "año":2019,
+            "director":"Jon Watts",
+            "genero":"accion",
+            "sinopsis":"Tras descubrirse ..."
+
+        },
+        {
+            "titulo":"Soul",
+            "año":2020,
+            "director":"Pete Doctor",
+            "genero":"infantil",
+            "sinopsis":"..."
+
+        },
+        {
+            "titulo":"parasitos",
+            "año":2019,
+            "director":"Bong Joo-Ho",
+            "genero":"drama",
+            "sinopsis":"..."
+
+        },
+        {
+            "titulo":"vengadores- infinity war",
+            "año":2018,
+            "director":"Anthony Russo",
+            "genero":"accion",
+            "sinopsis":"..."
+
+        },
+        {
+            "titulo":"El lobo de wall street",
+            "año":2013,
+            "director":"Martin Scorsese",
+            "genero":"drama",
+            "sinopsis":"..."
+
+        }
+    ]
+}
