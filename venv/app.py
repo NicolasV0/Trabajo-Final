@@ -1,20 +1,9 @@
 import time 
 import os
+import json
 
-dic_usuarios = {'Usuario001': {'Nombre y Apellido':'Nicolas Vaylet', 'Contraseña':111111},
-                'Usuario002': {'Nombre y Apellido':'Joaquin Allende', 'Contraseña':111112},
-                'Usuario003': {'Nombre y Apellido':'Javier Balmaceda', 'Contraseña':111113},
-                'Usuario004': {'Nombre y Apellido':'Martin Troilo', 'Contraseña':111114},
-                'Usuario005': {'Nombre y Apellido':'Marco Urtarroz', 'Contraseña':111115},
-                'Usuario006': {'Nombre y Apellido':'Carlos Berger', 'Contraseña':111116},
-                'Usuario007': {'Nombre y Apellido':'Mauro Torre', 'Contraseña':111117},
-                'Usuario008': {'Nombre y Apellido':'Camila Iniguez', 'Contraseña':111118},
-                'Usuario009': {'Nombre y Apellido':'Constanza Gonzalez', 'Contraseña':111119},
-                'Usuario010': {'Nombre y Apellido':'Micaela Perez', 'Contraseña':211111},
-                'Usuario011': {'Nombre y Apellido':'Simona Garcia', 'Contraseña':211112},
-                'Usuario012': {'Nombre y Apellido':'Genaro Fernandez', 'Contraseña':211113},
-                'Usuario013': {'Nombre y Apellido':'Cristina Aguilera', 'Contraseña':211114},
-                'Usuario014': {'Nombre y Apellido':'Alberto Comodoro', 'Contraseña':211115}}
+with open("usuarios.json") as file:
+    dic_usuarios = json.load(file) 
 
 
 #################### MENU INICIO SESION #####################################    
@@ -39,13 +28,7 @@ def menu_usuarios():
             time.sleep(1)
             os.system('cls')
             menu_usuarios()
-        return in_menu
-    except:
-        print('Error... Ingrese 1 o 2')
-        time.sleep(1)
-        os.system('cls')
-        menu_usuarios()
-                
+                    
 #################### MENU PRINCIPAL #####################################    
 def imprimir_menu():
     print('\033[0;31m' +'+--------------------------------------------------------------+'+'\033[0;m')
@@ -70,7 +53,8 @@ def iniciar_sesion():
             contraseña = int(input('Ingrese Contraseña: '))
         except:
             print('Error de dato, vuelva a intentarlo')
-            flag = True    
+            flag = True
+            continue    
         for us in dic_usuarios['usuarios']:    
             if us['Nombre y Apellido'] == usuario:
                 if us['contrasenia'] == contraseña:
@@ -106,9 +90,13 @@ def iniciar_sesion():
     
         
 ########### MAIN #####################################################
-in_menu = imprimir_menu()
+imprimir_menu()
 # Solo puede salir del menu con un 1 o 2. No hay posibilidad de que tome otro valor
-if in_menu == 1:
-    iniciar_sesion()
-else:
-    modo_libre() 
+while(True):
+    in_menu = menu_usuarios()
+    if in_menu == 1:
+        iniciar_sesion()
+        print('Saliste bien...')
+    elif in_menu == 2:
+        print('modo libre()')
+        
