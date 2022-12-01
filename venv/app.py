@@ -1,51 +1,10 @@
 import time 
 import os
+import json
 
-usuarios = [
-    {
-    "Nombre y Apellido":"Nicolas Vaylet",
-    "contrasenia":111111
-    },
-    {"Nombre y Apellido":"Joaquin Allende",
-     "contrasenia":111112
-    },
-    {"Nombre y Apellido":"Javier Balmaceda",
-     "contrasenia":111113
-    },
-    {"Nombre y Apellido":"Martin Troilo",
-     "contrasenia":111114
-    },
-    {"Nombre y Apellido":"Marco Urtarroz",
-     "contrasenia":111115
-    },
-    {"Nombre y Apellido":"Carlos Berger",
-     "contrasenia":111116
-    },
-    {"Nombre y Apellido":"Mauro Torre",
-     "contrasenia":111117
-    },
-    {"Nombre y Apellido":"Camila Iniguez",
-     "contrasenia":111118
-    },
-    {"Nombre y Apellido":"Constanza Gonzalez",
-     "contrasenia":111119
-    },
-    {"Nombre y Apellido":"Micaela Perez",
-     "contrasenia":211111
-    },
-    {"Nombre y Apellido":"Simona Garcia",
-     "contrasenia":211112
-    },
-    {"Nombre y Apellido":"Genaro Fernandez",
-     "contrasenia":211113
-    },
-    {"Nombre y Apellido":"Cristina Aguilera",
-     "contrasenia":211114
-    },
-    {"Nombre y Apellido":"Alberto Comodoro", 
-    "contrasenia":211115
-    }                   
-]
+with open("usuarios.json") as file:
+    dic_usuarios = json.load(file)
+
 
 #################### MENU INICIO SESION #####################################    
 def menu_usuarios():
@@ -89,8 +48,12 @@ def iniciar_sesion():
     while (True):
         flag = False
         usuario = input('Ingrese Nombre y Apellido: ')
-        contraseña = int(input('Ingrese Contraseña: '))
-        for us in usuarios:
+        try:
+            contraseña = int(input('Ingrese Contraseña: '))
+        except:
+            print('Error de dato, vuelva a intentarlo')
+            flag = True    
+        for us in dic_usuarios['usuarios']:    
             if us['Nombre y Apellido'] == usuario:
                 if us['contrasenia'] == contraseña:
                     print('Has iniciado sesion')
@@ -129,11 +92,10 @@ imprimir_menu()
 while(True):
     in_menu = menu_usuarios()
     # Solo puede salir del menu con un 1 o 2. No hay posibilidad de que tome otro valor
-    try:
-        if in_menu == 1:
-            iniciar_sesion()
-            print('Saliste bien')
-        elif in_menu == 2:
-            print('modo_libre()')
-    except:
-        print('Error')
+    if in_menu == 1:
+        iniciar_sesion()
+        print('Saliste bien')
+        time.sleep(1)
+    elif in_menu == 2:
+        print('modo_libre()')
+    os.system('cls')
