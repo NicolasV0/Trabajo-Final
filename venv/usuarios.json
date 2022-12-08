@@ -1,46 +1,46 @@
 { "usuarios" :[
     {
     "Nombre y Apellido":"Nicolas Vaylet",
-    "contrasenia":111111
+    "contrasenia":1111
     },
     {"Nombre y Apellido":"Joaquin Allende",
-     "contrasenia":111112
+     "contrasenia":1112
     },
     {"Nombre y Apellido":"Javier Balmaceda",
-     "contrasenia":111113
+     "contrasenia":1113
     },
     {"Nombre y Apellido":"Martin Troilo",
-     "contrasenia":111114
+     "contrasenia":1114
     },
     {"Nombre y Apellido":"Marco Urtarroz",
-     "contrasenia":111115
+     "contrasenia":1115
     },
     {"Nombre y Apellido":"Carlos Berger",
-     "contrasenia":111116
+     "contrasenia":1116
     },
     {"Nombre y Apellido":"Mauro Torre",
-     "contrasenia":111117
+     "contrasenia":1117
     },
     {"Nombre y Apellido":"Camila Iniguez",
-     "contrasenia":111118
+     "contrasenia":1118
     },
     {"Nombre y Apellido":"Constanza Gonzalez",
-     "contrasenia":111119
+     "contrasenia":1119
     },
     {"Nombre y Apellido":"Micaela Perez",
-     "contrasenia":211111
+     "contrasenia":2111
     },
     {"Nombre y Apellido":"Simona Garcia",
-     "contrasenia":211112
+     "contrasenia":2112
     },
     {"Nombre y Apellido":"Genaro Fernandez",
-     "contrasenia":211113
+     "contrasenia":2113
     },
     {"Nombre y Apellido":"Cristina Aguilera",
-     "contrasenia":211114
+     "contrasenia":2114
     },
     {"Nombre y Apellido":"Alberto Comodoro", 
-    "contrasenia":211115
+    "contrasenia":2115
     }                   
 ]
 }
