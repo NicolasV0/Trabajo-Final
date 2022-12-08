@@ -2,9 +2,8 @@ import time
 import os
 import json
 
-with open("usuarios.json") as file:
-    dic_usuarios = json.load(file) 
-
+with open("usuarios.json") as archivo:
+    dic_usuarios = json.load(archivo)
 
 #################### MENU INICIO SESION #####################################    
 def menu_usuarios():
